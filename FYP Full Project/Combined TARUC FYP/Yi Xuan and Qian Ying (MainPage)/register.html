@@ -1,0 +1,241 @@
+
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" charset="UTF-8">
+        <title>Register Account</title>
+        <link rel="stylesheet" href="mainpage.css">
+    </head>
+    <body>
+        <div class="header">
+            <a href="index.html"><img src="photo/p3.PNG" alt="uip" class="main-logo img-responsive" /></a>
+            <div class="header-right">   
+            <a href="index.html">Home&nbsp;</a>
+            <a href="../Kay Tze (Ministry)/Ministry_Melaka.html">Ministry&nbsp; </a>
+            <a href="aboutUs.html">About us&nbsp;</a>
+            <a href="../Mun Jun (Academic)/mainpage.html">Academic&nbsp;</a>
+            <a href="../Mei Siew and Wei Kang (UIP Future)/category.html">UIP Future&nbsp;</a>
+            <a href="../Kah Wei (Admin)/Dashboard/dashboard.html">Admin&nbsp;</a>
+            <a href="login.html">Login/Register&nbsp;</a>
+            </div>
+        </div>
+
+
+        <div class="container" style="margin: 0px 15px;">
+            <Form method="post" id="register_form" autocomplete="off" action="login.html">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h4>Register Account</h4>
+                        <p2>If you already have an account with us, please login at the <a href="login.html">login page</a>.</p2>
+                    </div>
+                </div>
+
+                <div class="row">   
+                    <div class="col-md-12" id="RegisterContent">
+                        <h3>Your Address (Can be ignore)</h3>
+                        <div class="AddressContent row">
+                            <div class="form-group form-inline">
+                                <label style="width:100px">Address 1 :</label>
+                                <input class="form-control" size="115" name="address1">
+                            </div>
+                            <br/>
+                            <div class="form-group form-inline">
+                                <label style="width:100px;">Address 2 :</label>
+                                <input class="form-control" size="115" name="address2">
+                            </div>
+                            <br/>
+                            <div class="form-group form-inline">
+                                <label style="width:100px;">City :</label>
+                                <input class="form-control" size="115" name="city">
+                            </div>
+                            <br/>
+                            <div class="form-group form-inline">
+                                <label style="width:100px;">State :</label>
+                                <input class="form-control" size="115" name="state">
+                            </div>
+                            <br/>
+                            <div class="form-group form-inline">
+                                <label style="width:100px;">Postcode :</label>
+                                <input class="form-control" size="115" name="postcode" id="postcode" size="5" maxlength="5" onkeypress="validate(event)">
+                            </div>
+                            <br/>
+                            <div class="form-group form-inline">
+                                <label style="width:100px;">Country :</label>
+                                <select class="form-control" name="country">
+                                    <option>Malaysia</option>
+                                    <option>Singapore</option>
+                                    <option>Indonesia</option>
+                                </select>
+
+                            </div>
+                        </div>
+
+                    </div> 
+                </div>
+
+                <div class="row">   
+                    <div class="col-md-12" id="RegisterContent">
+                        <h3>Your Account (Email will be your login account)</h3>
+                        <div class="AddressContent row">
+                            <div class="form-group form-inline">
+                                <label style="width:100px;">Name :</label>
+                                <input class="form-control" size="115" required name="name" id="name" type="text">
+                            </div>
+                            <br/>
+                            <div class="form-group form-inline">
+                                <label style="width:100px;">Contact :</label>
+                                <input class="form-control" size="115" name="contact" id="contact" onkeypress="validate(event)">
+                            </div>
+                            <br/>
+                            <div class="form-group form-inline">
+                                <label style="width:100px;">Email :</label>
+                                <input class="form-control" size="115" required name="email" id="email" type="email">
+                            </div>
+                            <br/>
+                            <div class="form-group form-inline">
+                                <label style="width:100px;">Password :</label>
+                                <input type="password" class="form-control" size="115" required name="ps" id="ps">
+                            </div>
+                            <br/>
+                            <div class="form-group form-inline">
+                                <label style="width:100px;">Re-password :</label>
+                                <input type="password" class="form-control" size="115" required id="reps">
+                            </div>
+                        </div>
+                    </div> 
+                </div>
+            </Form>
+
+            <div class="row">   
+                <div class="col-md-12" id="RegisterContent">
+                    <table class="form" width="80%">
+                        <tbody>
+                            <tr>
+                        <div>
+                            <input type="submit" value="Register" class="button" style="margin-top: -21px;" form="register_form">
+                            <br/>
+                        </p>
+                        </div>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div> 
+            </div>
+        </div>
+        <div class="footer"> 
+            <div class="copyrightrow">
+                <p3>All Rights Reserved. Developed by Progression Studios</p3>
+            </div>
+        </div>
+
+
+<script>
+    function submit() {
+        var fulfill = true;
+        var message = "";
+        document.getElementById('postcode').style.borderColor = "";
+        document.getElementById('name').style.borderColor = "";
+        document.getElementById('contact').style.borderColor = "";
+        document.getElementById('email').style.borderColor = "";
+        document.getElementById('ps').style.borderColor = "";
+        document.getElementById('reps').style.borderColor = "";
+
+        if (document.getElementById('postcode').value) {
+            if (document.getElementById('postcode').value.length < 5) {
+                document.getElementById('postcode').style.borderColor = "red";
+                fulfill = false;
+                message = message + "Post code is invalid !\n";
+            }
+        }
+        if (!document.getElementById('name').value || document.getElementById('name').value === "") {
+            document.getElementById('name').style.borderColor = "red";
+            fulfill = false;
+            message = message + "Name is required !\n";
+        }
+        if (!document.getElementById('contact').value || document.getElementById('contact').value === "") {
+            document.getElementById('contact').style.borderColor = "red";
+            fulfill = false;
+            message = message + "Contact is required !\n";
+        }
+        if (!document.getElementById('email').value || document.getElementById('email').value === "") {
+            document.getElementById('email').style.borderColor = "red";
+            fulfill = false;
+            message = message + "Email is required !\n";
+        } else {
+            var mailformat = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+            if (!document.getElementById("email").value.match(mailformat)) {
+                document.getElementById("email").style.borderColor = "red";
+                fullfill = false;
+                message = message + "Invalid email !\n";
+            } else {
+                for (i = 0; i < Array_email.length; i++) {
+                    if (Array_email[i] === document.getElementById("email").value) {
+                        document.getElementById("email").style.borderColor = "red";
+                        fullfill = false;
+                        message = message + "This email already been registered !\n";
+                        break;
+                    }
+                }
+            }
+        }
+        
+        if (!document.getElementById('ps').value || document.getElementById('ps').value === "") {
+            document.getElementById('ps').style.borderColor = "red";
+            fulfill = false;
+            message = message + "Password is required !\n";
+        } else {
+            if (document.getElementById('ps').value.length < 8) {
+                document.getElementById('ps').style.borderColor = "red";
+                fulfill = false;
+                message = message + "Password is not enought strong.Please atleast more that 8 character !\n";
+            }
+        }
+        
+        if (!document.getElementById('reps').value || document.getElementById('reps').value === "") {
+            document.getElementById('reps').style.borderColor = "red";
+            fulfill = false;
+            message = message + "Re-password is required !\n";
+        } else {
+            if (document.getElementById('reps').value !== document.getElementById('ps').value) {
+                document.getElementById('reps').style.borderColor = "red";
+                document.getElementById('ps').style.borderColor = "red";
+                fulfill = false;
+                message = message + "Password is not match with Re-password !\n";
+            }
+        }
+        
+        if (!document.getElementById('privacy').checked) {
+            fulfill = false;
+            message = message + "Please agree the privacy policy !\n";
+        }
+        
+        if (fulfill) {
+            if (confirm("Confirm to register ?")) {
+                document.getElementById("registerForm").submit();
+            }
+        } else {
+            alert(message);
+        }
+    }
+
+    function validate(evt) {
+        var theEvent = evt || window.event;
+        if (theEvent.type === 'paste') {
+            key = event.clipboardData.getData('text/plain');
+        } else {
+            var key = theEvent.keyCode || theEvent.which;
+            key = String.fromCharCode(key);
+        }
+        var regex = /[0-9]|\./;
+        if (!regex.test(key)) {
+            theEvent.returnValue = false;
+            if (theEvent.preventDefault)
+                theEvent.preventDefault();
+        }
+    }
+</script>
+
+</body>
+</html>
+
+
+

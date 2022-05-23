@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="en-US">
+
+<head>
+    <meta charset="UTF-8">
+    <style>
+        /* Header */
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .header {
+            overflow: hidden;
+            background-color: black;
+            padding: 20px 10px;
+        }
+
+        .header a {
+            float: left;
+            color: white;
+            text-align: center;
+            padding: 12px;
+            text-decoration: none;
+            font-size: 15px;
+            line-height: 15px;
+            border-radius: 4px;
+        }
+
+        .main-logo {
+            width: 100%;
+            max-width: 100px;
+        }
+
+        .img-responsive {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .header a:hover {
+            color: #4b5f7d;
+        }
+
+        .header-right {
+            float: right;
+        }
+
+        @media screen and (max-width: 500px) {
+            .header a {
+                float: none;
+                display: block;
+                text-align: left;
+            }
+
+            .header-right {
+                float: none;
+            }
+        }
+
+        /* Footer */
+        html,
+        body {
+            height: 100%;
+        }
+
+        /* Style the copyright row */
+        .copyrightrow {
+            color: white;
+            padding: 10px;
+            text-align: center;
+            clear: both;
+            font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+        }
+
+        /*Style the Footer*/
+        .footer {
+
+            background-color: #183142;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            clear: both;
+            font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+        }
+
+        /* Category */
+        .grid_container {
+            border: 1px solid black;
+            display: grid;
+            grid-template-columns: 50px 50px 50px;
+            grid-template-rows: 50px 50px;
+            background-color: green;
+            padding: 10px;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-areas: "button1 button2 button3 button4 button5 button6"
+                "button7 button8 button9 button10 button11 button12";
+            grid-gap: 50px;
+            width: 100%;
+            justify-content: center;
+            background-color: seashell;
+            padding-top: 20px;
+            padding-bottom: 20px;
+
+        }
+
+        .btn {
+            width: 150px;
+            height: 120px;
+            background-color: white;
+            border-color: white;
+        }
+
+        .btn:hover {
+            background-color: #3e8e41;
+        }
+
+        .img-menu {
+            width: 70px;
+            height: 70px;
+        }
+
+        .word-menu {
+            color: black;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <a href="index.php"><img src="../Yi Xuan and Qian Ying (MainPage)/photo/p3.PNG" alt="uip" class="main-logo img-responsive" /></a>
+        <div class="header-right">
+
+            <a href="../Yi Xuan and Qian Ying (MainPage)/index.html"> Home&nbsp;</a>
+            <a href="../Kay Tze (Ministry)/Ministry_Melaka.html">Ministry&nbsp; </a>
+            <a href="../Yi Xuan and Qian Ying (MainPage)/aboutUs.html">About us&nbsp;</a>
+            <a href="../Mun Jun (Academic)/mainpage.html">Academic&nbsp;</a>
+            <a href="category.html">UIP Future&nbsp;</a>
+            <a href="../Kah Wei (Admin)/Dashboard/dashboard.html">Admin&nbsp;</a>
+            <a href="../Yi Xuan and Qian Ying (MainPage)/login.html">Login/Register&nbsp; </a>
+        </div>
+    </div>
+    <div><a href="">
+            <h1 style="text-align: center;">Explore</h1>
+        </a>
+        <div class="grid-container">
+            <button class="btn"><a href="agriculture.html"><img src="Agriculture.png" class="img-menu" /><br><span
+                        style="color: black;text-decoration: none;display: inline-block;">Agriculture</span></a></button>
+            <button class="btn"><a href="board reporting.html"><img src="Board Reporting.png"
+                        class="img-menu" /><br><span
+                        style="color: black;text-decoration: none;display: inline-block;">Board
+                        Reporting</span></a></button>
+            <button class="btn"><a href="business.html"><img src="Business.png" class="img-menu" /><br><span
+                        style="color: black;text-decoration: none;display: inline-block;">Business</span></a></button>
+            <button class="btn"><a href="education.html"><img src="Education.png" class="img-menu" /><br><span
+                        style="color: black;text-decoration: none;display: inline-block;">Education</span></a></button>
+            <button class="btn"><a href="energy.html"><img src="Energy.png" class="img-menu" /><br><span
+                        style="color: black;text-decoration: none;display: inline-block;">Energy</span></a></button>
+            <button class="btn"><a href="finance&investment.html"><img src="Finance.png" class="img-menu" /><br><span
+                        style="color: black;text-decoration: none;display: inline-block;">Finance &amp;
+                        Investment</span></a></button>
+            <button class="btn"><a href="healthcare.html"><img src="Healthcare.png" class="img-menu" /><br><span
+                        style="color: black;text-decoration: none;display: inline-block;">Healthcare</span></a></button>
+            <button class="btn"><a href="human capital.html"><img src="Human Capital.png" class="img-menu" /><br><span
+                        style="color: black;text-decoration: none;display: inline-block;">Human
+                        Capital</span></a></button>
+            <button class="btn"><a href="Info.html"><img src="Infocommunication.png" class="img-menu" /><br><span
+                        style="color: black;text-decoration: none;display: inline-block;">Infocommunication &amp;
+                        Technology</span></a></button>
+            <button class="btn"><a href="Legal.html"><img src="Legal.png" class="img-menu" /><br><span
+                        style="color: black;text-decoration: none;display: inline-block;">Legal</span></a></button>
+            <button class="btn"><a href="manufacturing.html"><img src="Manufacturing.png" class="img-menu" /><br><span
+                        style="color: black;text-decoration: none;display: inline-block;">Manufacturing</span></a></button>
+            <button class="btn"><a href="marketing.html"><img src="Marketing.png" class="img-menu" /><br><span
+                        style="color: black;text-decoration: none;display: inline-block;">Marketing</span></a></button>
+            <button class="btn"><a href="maths science.html"><img src="Math_Science.png" class="img-menu" /><br><span
+                        style="color: black;text-decoration: none;display: inline-block;">Maths/Science</span></a></button>
+            <button class="btn"><a href="policy&socio.html"><img src="Policy.png" class="img-menu" /><br><span
+                        style="color: black;text-decoration: none;display: inline-block;">Policy &amp;
+                        Socioeconomic</span></a></button>
+            <button class="btn"><a href="professional services.html"><img src="Professional Services.png" class="img-menu" /><br><span
+                        style="color: black;text-decoration: none;display: inline-block;">Professional
+                        Services</span></a></button>
+            <button class="btn"><a href="tourism&hospitality.html"><img src="Tourism.png" class="img-menu" /><br><span
+                        style="color: black;text-decoration: none;display: inline-block;">Tourism &amp;
+                        Hospitality</span></a></button>
+        </div>
+    </div>
+    </br>
+
+    <div class="footer">
+        <div class="copyrightrow">
+            <p3>All Rights Reserved. Developed by Progression Studios</p3>
+        </div>
+    </div>
+</body>
+
+</html>

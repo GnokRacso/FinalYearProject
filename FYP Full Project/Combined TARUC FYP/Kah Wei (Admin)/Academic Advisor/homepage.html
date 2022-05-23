@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<title>Academic Advisor</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../admin.css">
+<body>
+
+<div class="w3-sidebar w3-bar-block w3-collapse w3-card w3-animate-left" style="width:200px;" id="mySidebar">
+    <button class="w3-bar-item w3-button w3-large w3-hide-large" onclick="w3_close()">Close &times;</button>
+    <a href="../Dashboard/dashboard.html" class="w3-bar-item w3-button">Dashboard</a>
+    <a href="#" class="w3-bar-item w3-button">Ministry</a>
+    <a href="homepage.html" class="w3-bar-item w3-button">Academic Advisor</a>
+    <a href="../UIP Future/homepage.html" class="w3-bar-item w3-button">UIP Future</a>
+    <a href="#" class="w3-bar-item w3-button">Login</a>
+    <a href="#" class="w3-bar-item w3-button">Log Out</a>
+</div>
+
+<div class="w3-main" style="margin-left:200px">
+    <div class="w3-teal">
+        <div class="w3-container">
+            <h1 style="width:50%;">Universities List</h1>
+            <button class="button_class" onclick="redirectToAddAcademic()"> Add New </button>
+            <br><br>
+            <table>
+                <tr>
+                    <th><p class="uipheader">University</p></th>
+                    <th><p class="uipheader">Author</p></th>
+                    <th><p class="uipheader">Upload Date</p></th>
+                </tr>
+
+                <tr>
+                    <td><a href="viewStaffList.html">University Tunku Abdul Rahman.csv</a></td>
+                    <td><a href="#profile">Lee Kah Wei</a></td>
+                    <td>Uploaded at 2021/10/26</td>
+                </tr>
+
+                <tr>
+                    <td><a href="#csvfile">Tunku Abdul Rahman University College.csv</a></td>
+                    <td><a href="#profile">Lee Kah Wei</a></td>
+                    <td>Uploaded at 2021/10/26</td>
+                </tr>
+
+                <tr>    
+                    <td><a href="#csvfile">Taylor's University.csv</a></td>
+                    <td><a href="#profile">Lee Kah Wei</a></td>
+                    <td>Uploaded at 2021/10/27</td>
+                </tr>
+
+                <tr>    
+                    <td><a href="#csvfile">Sunway University.csv</a></td>
+                    <td><a href="#profile">Lee Kah Wei</a></td>
+                    <td>Uploaded at 2021/10/28</td>
+                </tr>
+
+                <tr>    
+                    <td><a href="#csvfile">Monash University.csv</a></td>
+                    <td><a href="#profile">Lee Kah Wei</a></td>
+                    <td>Uploaded at 2021/10/29</td>
+                </tr>
+
+                <tr>    
+                    <td><a href="#csvfile">University Putra Malaysia.csv</a></td>
+                    <td><a href="#profile">Lee Kah Wei</a></td>
+                    <td>Uploaded at 2021/10/29</td>
+                </tr>           
+            </table>  
+        </div>
+        
+    </div>
+</div>
+
+    <script>
+        function w3_open() {
+          document.getElementById("mySidebar").style.display = "block";
+        }
+        
+        function w3_close() {
+          document.getElementById("mySidebar").style.display = "none";
+        }   
+        
+        function redirectToAddAcademic(){
+            window.location.href = "C:\\Users\\lkw06\\Desktop\\FYP Taruc\\Academic Advisor\\academicAdd.html";
+        }
+    </script>
+
+
+</body>
+</html>

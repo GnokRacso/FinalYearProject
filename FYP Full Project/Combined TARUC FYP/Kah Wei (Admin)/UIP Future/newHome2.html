@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+<title>UIP Future</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="C:\Users\lkw06\Desktop\FYP Taruc\design.css">
+<body>
+
+  <div class="w3-sidebar w3-bar-block w3-collapse w3-card w3-animate-left" style="width:200px;" id="mySidebar">
+    <button class="w3-bar-item w3-button w3-large w3-hide-large" onclick="w3_close()">Close &times;</button>
+    <a href="../Dashboard/dashboard.html" class="w3-bar-item w3-button">Dashboard</a>
+    <a href="#" class="w3-bar-item w3-button">Ministry</a>
+    <a href="../Academic Advisor/newHome.html" class="w3-bar-item w3-button">Academic Advisor</a>
+    <a href="newHome2.html" class="w3-bar-item w3-button">UIP Future</a>
+    <a href="#" class="w3-bar-item w3-button">Login</a>
+    <a href="#" class="w3-bar-item w3-button">Log Out</a>
+  </div>
+
+<div class="w3-main" style="margin-left:200px">
+<div class="w3-teal">
+    <button class="w3-button w3-teal w3-xlarge w3-hide-large" onclick="w3_open()">&#9776;</button>
+    <div class="w3-container">
+        <div class="headerContainer" id="container">
+          <div id="header" >
+            <h1>Projects List</h1>
+            <button class="button_class"> Add New </button>
+          </div>
+            <div id="actionContainer" style=" margin-top: 20px;">
+              <select id="action" name="actionList">
+                <option value=" " disabled selected>— Bulk Actions —</option>
+                <option value="edit">Edit</option>
+                <option value="delete">Delete</option>
+              </select>
+              <button class="button_class" onclick="action()"> Apply </button>
+              <select id="category" name="categoryList" style="margin:0px 0px 0px 30px">
+                <option value="all" selected>Select a Category</option>
+                <option value="Agriculture">Agriculture</option>
+                <option value="Board Reporting">Board Reporting</option>
+                <option value="Business">Business</option>
+                <option value="Design">Design</option>
+                <option value="Policy & Socioeconomic">Policy & Socioeconomic</option>
+              </select>
+              <button class="button_class" type="submit" value="filter" onclick="filterByCategory()">Filter</button>
+              <input type="text" id="name_input" name="search_name" placeholder="Search Project Name..." title="Type in a name" onkeyup="searchFunction()" style="float: right;">  
+            </div>
+        </div>
+        <table id="projectTable" style="margin:20px 0px">
+            <tr>
+                <th><input type="checkbox" id="selectAll" name="selectAll" value="selectAll" onclick="checkAll(this)"></th>
+                <th class="uip_content"><p>Project Name</p></th>
+                <th class="uip_content" style="width:15%"><p>Categories</p></th>
+                <th class="uip_content" style="width:10%"><p>Researcher</p></th>
+                <th class="uip_content" style="width:13%"><p>Publish Date</p></th>
+            </tr>
+            <tr>
+                <td><input type="checkbox" id="product1" value="product1" name="checkbox"></td>
+                <td><a href="viewCases.html">AI Platform</a></td>
+                <td><a href="#category">Board Reporting</a></td>
+                <td><a href="#profile">Encik Abd. Rashid bin Ibrahim</a></td>
+                <td>Published 2021/10/29</td>
+            </tr>
+            
+            <tr>
+                <td><input type="checkbox" id="product2" value="product2" name="checkbox"></td>
+                <td><a href="#product">RoboAdvisor to monitor the risk and effectiveness of Islamic MFIs in Malaysia using AI based on financial and non-financial parameters.</a></td>
+                <td><a href="#category">Board Reporting</a></td>
+                <td><a href="#profile">Encik Abd. Rashid bin Ibrahim</a></td>
+                <td>Published 2021/10/29</td>
+            </tr>
+
+            <tr>
+              <td><input type="checkbox" id="product3" value="product3" name="checkbox"></td>
+              <td><a href="#product">“Etak” As Traditional Food: Profiling, Safety, Supply, And Revival Of The “Etak” Industry For Food Heritage Sustainability</a></td>
+              <td><a href="#category">Manufacturing</a></td>
+              <td><a href="#profile">Tn Hj. Arif bin Omar</a></td>
+              <td>Published 2021/10/29</td>
+            </tr>
+
+          <tr>
+            <td><input type="checkbox" id="product4" value="product4" name="checkbox"></td>
+            <td><a href="#product">A new Modeling Technique for Real Time Analysis of Multicomponent Transient Signals</a></td>
+            <td><a href="#category">Marketing</a></td>
+            <td><a href="#profile">Puan Nursyafika binti Hj Mohd Yusoff</a></td>
+            <td>Published 2021/10/29</td>
+          </tr>
+
+        <tr>
+          <td><input type="checkbox" id="product5" value="product5" name="checkbox"></td>
+          <td><a href="#product">AI Platform – Evaluate ethical issues across case studies globally</a></td>
+          <td><a href="#category">Policy & Socioeconomic</a></td>
+          <td><a href="#profile">Tn Hj. Arif bin Omar</a></td>
+          <td>Published 2021/10/29</td>
+        </tr>
+
+        <tr>
+          <td><input type="checkbox" id="product5" value="product5" name="checkbox"></td>
+          <td><a href="#product">RoboAdvisor – Analyse the farming methods and processes of fresh Water Lobster</a></td>
+          <td><a href="#category">Agriculture</a></td>
+          <td><a href="#profile">Puan Nursyafika binti Hj Mohd Yusoff</a></td>
+          <td>Published 2021/10/29</td>
+        </tr>
+        </table>
+    </div>
+</div> 
+</div>
+
+<script>
+    function w3_open() {
+      document.getElementById("mySidebar").style.display = "block";
+    }
+    
+    function w3_close() {
+      document.getElementById("mySidebar").style.display = "none";
+    }
+</script>
+
+<script>
+  function searchFunction() {
+    var input, filter, table, tr, td, i, txtValue;
+    var j = 0
+    input = document.getElementById("name_input");
+    filter = input.value.toUpperCase();
+    table = document.getElementById("projectTable");
+    tr = table.getElementsByTagName("tr");
+    for (i = 0; i < tr.length; i++) {
+      td = tr[i].getElementsByTagName("td")[1];
+
+      if (td) {
+        txtValue = td.textContent || td.innerText;
+        console.log(txtValue);
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+          tr[i].style.display = "";
+          j+=1
+        } else {
+          tr[i].style.display = "none";
+        }
+      }       
+    }
+    if (j == 0){
+        table.style.display = "none";
+    }
+    else{
+        table.style.display = "";
+    }
+  }
+
+  function filterByCategory() {
+    var category = document.getElementById("category");
+    var j = 0;
+    var valueCategory = category.value;
+    
+    var filter = valueCategory.toUpperCase();
+    console.log(filter);
+    table = document.getElementById("projectTable");
+    tr = table.getElementsByTagName("tr");
+    if(filter == "ALL"){
+      for (k = 0; k < tr.length; k++){
+        tr[k].style.display = "";
+      }
+    }
+    else{
+      for (i = 0; i < tr.length; i++) {
+        td = tr[i].getElementsByTagName("td")[2];
+        if (td) {
+          txtValue = td.textContent || td.innerText;
+          console.log(txtValue)
+          if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            tr[i].style.display = "";
+            j+=1
+          } else {
+            tr[i].style.display = "none";
+          }
+        }       
+      }
+      if (j == 0){
+          table.style.display = "none";
+        }
+      else{
+          table.style.display = "";
+      } 
+    }
+    
+  }
+
+  function action(){
+    var action = document.getElementById("action");
+    var valueAction = action.value.toUpperCase();
+    var checkBoxes = document.getElementsByName("checkbox");
+    table = document.getElementById("projectTable");
+    checkboxes = table.getElementsByTagName("input");
+    tr = table.getElementsByTagName("tr");
+    var j = 0;
+    if(valueAction == 'DELETE'){
+      for (i = 0; i < checkboxes.length; i++) {
+
+      if (checkboxes[i].checked) {
+          tr[i].style.display = "none";
+          j+=1
+      } 
+      else {
+          tr[i].style.display = "";
+      }
+    } 
+  }
+  if(j == checkboxes.length){
+    table.style.display = "none";
+    const para = document.createElement("p");
+    const node = document.createTextNode("No project(s) available");
+    para.appendChild(node);
+
+    const element = document.getElementById("container");
+    element.appendChild(para);
+  }        
+}
+  function checkAll(source) {
+    checkboxes = document.getElementsByName('checkbox');
+    for(var i=0, n=checkboxes.length;i<n;i++) {
+       checkboxes[i].checked = source.checked;
+    }
+  }
+  </script>
+
+</body>
+</html>

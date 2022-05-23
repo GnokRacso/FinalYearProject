@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<title>Academic Advisor</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../admin.css">
+<body>
+    <div class="w3-sidebar w3-bar-block w3-collapse w3-card w3-animate-left" style="width:200px;" id="mySidebar">
+        <button class="w3-bar-item w3-button w3-large w3-hide-large" onclick="w3_close()">Close &times;</button>
+        <a href="../Dashboard/dashboard.html" class="w3-bar-item w3-button">Dashboard</a>
+        <a href="#" class="w3-bar-item w3-button">Ministry</a>
+        <a href="homepage.html" class="w3-bar-item w3-button">Academic Advisor</a>
+        <a href="../UIP Future/homepage.html" class="w3-bar-item w3-button">UIP Future</a>
+        <a href="#" class="w3-bar-item w3-button">Login</a>
+        <a href="#" class="w3-bar-item w3-button">Log Out</a>
+      </div>
+
+<div class="w3-main" style="margin-left:200px">
+    <div class="w3-teal">
+        <div class="w3-container">
+            <div class="header_container" style="border: 1px solid black;border-radius: 5px;margin: 10px 0px; width: 50%;">
+                <h1 class="header">Edit profile</h1>
+            </div>
+            <p class="header">Edit staff personal information here</p>
+            
+            <form method="post" action="C:\Users\lkw06\Desktop\FYP Taruc\Academic Advisor\academicViewSave.html">
+                <label for="name">Name:</label><br>
+                <input style="margin-right: auto;margin-left: auto;" type="text" id="name" name="name" value="Tuan Rahizi bin Ranom" required size=40><br>
+                <label for="department">Department:</label><br>
+                <input type="text" id="department" name="department" value="-" size=40><br>
+                <label for="designation">Designation:</label><br>
+                <input type="text" id="designation" name="designation" value="Pengawai Daerah" size=40><br>
+                <label for="email">Email:</label><br>
+                <input type="email" id="email" name="email" value="rahizi@melaka.gov.my" size=40><br>
+                <label for="telephone">Telephone:</label><br>
+                <input type="text" id="telephone" name="telephone" value="-"><br>
+                <label for="ext">Extension:</label><br>
+                <input type="text" id="ext" name="ext" value="-"><br>
+                <label for="faks">Faks:</label><br>
+                <input type="text" id="faks" name="faks" value='-'><br>
+                <br>
+                <div class="buttons">
+                    <div class="action_btn">
+                        <input class="action_btn"  type="submit" value="Save"><button class="action_btn" type="button" onclick="deletePerson()" style="margin-left:10px;">Delete</button>
+                    </div>
+                </div>
+                
+            </form>
+        </div>
+    </div>
+</div>
+
+<script>
+    function w3_open() {
+      document.getElementById("mySidebar").style.display = "block";
+    }
+    
+    function w3_close() {
+      document.getElementById("mySidebar").style.display = "none";
+    }
+
+    function deletePerson() {
+        var txt;
+        var r = confirm("Delete This Person?");
+        if(r == true){
+            window.location.href = "academicViewDelete.html";          
+        }
+        else{
+        }
+    }
+
+</script>
+</body>
+</html>

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<title>Academic Advisor</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../admin.css">
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.7.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/4.1.2/papaparse.min.js"></script>
+<body>
+
+<div class="w3-sidebar w3-bar-block w3-collapse w3-card w3-animate-left" style="width:200px;" id="mySidebar">
+    <button class="w3-bar-item w3-button w3-large w3-hide-large" onclick="w3_close()">Close &times;</button>
+    <a href="../Dashboard/dashboard.html" class="w3-bar-item w3-button">Dashboard</a>
+    <a href="#" class="w3-bar-item w3-button">Ministry</a>
+    <a href="homepage.html" class="w3-bar-item w3-button">Academic Advisor</a>
+    <a href="../UIP Future/homepage.html" class="w3-bar-item w3-button">UIP Future</a>
+    <a href="#" class="w3-bar-item w3-button">Login</a>
+    <a href="#" class="w3-bar-item w3-button">Log Out</a>
+</div>
+
+<div class="w3-main" style="margin-left:200px">
+<div class="w3-teal">
+  <button class="w3-button w3-teal w3-xlarge w3-hide-large" onclick="w3_open()">&#9776;</button>
+  <div class="w3-container">
+    <h1 style="width:50%;">Upload CSV file</h1>
+    <label for="fileUpload" class="input_file">Select File </label>
+    <input type="file" id="fileUpload" name="fileUpload" accept=".csv" required />
+    <span id="fileUploadSpan">No file selected</span>
+    <br><br>
+    <button class="button_class" type="submit" id="show-file" onclick="showFileContent()">Show File Content</button>
+    <button class="button_class" type="submit" id="upload-file" onclick="uploadFile()">Upload File to Database</button>
+    <br><br>
+    <div class="row">
+        <div class="row" id="parsed_csv_list">
+
+        </div>
+    </div>
+    </div>
+  
+</div>
+</div>
+
+<script type="text/javascript">
+$('#fileUpload').change(function(e){
+    var filename = e.target.files[0].name;
+    console.log(filename)
+    document.getElementById("fileUploadSpan").innerHTML = filename;
+});
+$(document).ready(function(){
+    $('#show-file').on("click", function(e){
+        e.preventDefault()
+        $('#fileUpload').parse({
+            config: {
+                delimiter:"auto",
+                complete: displayHTMLTable,
+            },
+            before: function(file, inputElem){
+                console.log("Parsing file...", file);
+            },
+            error: function(err,file){
+                console.log("ERROR: ", err, file);
+            },
+            complete: function(){
+                console.log("Done with all files");
+            }
+        });
+    });
+
+    function displayHTMLTable(results){
+            var table="<table class='table'>";
+            var data = results.data;
+
+            for(i=0;i<data.length;i++){
+                if(i != data.length - 1){
+                    table+= "<tr>";
+                    var row = data[i];
+                    var cells = row.join(",").split(",");
+                    console.log(cells);
+                    for(j=0;j<cells.length;j++){
+                        cells[j] = cells[j].replace(/"/g,"");
+                        table+="<td>";
+                        table+= cells[j];
+                        table+= "</th>"
+                    }
+                    table+= "</tr>";
+                }
+            }
+            table+="</table>";
+            table+="<p>Number of Staff:";
+            table+= data.length;
+            table+= "</p>";
+            $("#parsed_csv_list").html(table);  
+    }
+});
+</script>
+
+
+
+<script>
+function w3_open() {
+  document.getElementById("mySidebar").style.display = "block";
+}
+
+function w3_close() {
+  document.getElementById("mySidebar").style.display = "none";
+}
+
+function showFileContent(){
+    if( document.getElementById("fileUpload").files.length == 0 ){
+        alert("No files uploaded, Cannot show content");
+        document.getElementById("fileUpload").focus()
+    } 
+}
+
+function uploadFile() {
+    if( document.getElementById("fileUpload").files.length == 0 ){
+        alert("No files uploaded");
+        document.getElementById("fileUpload").focus()
+    } 
+    else{
+        window.location.href = "newHome.html";
+    }
+
+}
+
+function addNewCategory() {
+  document.getElementById("addNewCategoryDiv").style.display="block";
+  var addNewButton = document.getElementById("addNewCategoryButton");
+  addNewButton.remove();
+}
+</script>
+     
+</body>
+</html>

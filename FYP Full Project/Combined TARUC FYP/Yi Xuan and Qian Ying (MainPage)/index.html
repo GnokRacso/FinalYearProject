@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>UIPFuture -- UIPFuture</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+        <link rel="stylesheet" href="mainpage.css">
+        
+    </head>
+    
+    <body>
+        <div>
+            <div class="header">
+                <a href="index.html"><img src="photo/p3.PNG" alt="uip" class="main-logo img-responsive" /></a>
+                <div class="header-right">   
+                <a href="index.html">Home&nbsp;</a>
+                <a href="../Kay Tze (Ministry)/Ministry_Melaka.html">Ministry&nbsp; </a>
+                <a href="aboutUs.html">About us&nbsp;</a>
+                <a href="../Mun Jun (Academic)/mainpage.html">Academic&nbsp;</a>
+                <a href="../Mei Siew and Wei Kang (UIP Future)/category.html">UIP Future&nbsp;</a>
+                <a href="../Kah Wei (Admin)/Dashboard/dashboard.html">Admin&nbsp;</a>
+                <a href="login.html">Login/Register&nbsp;</a>
+                </div>
+            </div>
+            <div class="slideshow-container">
+                <div class="mySlides">
+                    <img class="slidesImage" src="photo/Slide1.png">
+                </div>
+
+                <div class="mySlides">
+                    <img class="slidesImage" src="photo/Slide2.PNG">
+                </div>
+
+                <div class="mySlides">
+                    <img class="slidesImage" src="photo/Slide3.png">
+                </div>
+
+                <div class="mySlides">
+                    <img class="slidesImage" src="photo/Slide4.png">
+
+                </div>
+
+                <div class="mySlides">
+                    <img class="slidesImage" src="photo/Slide5.png">
+                </div>
+                
+                <div class="mySlides">
+                    <img class="slidesImage" src="photo/Slide6.png">
+                </div>
+                
+            </div>
+
+        </div>
+        <br>
+        
+        <div style="text-align:center">
+            <span class="dot"></span> 
+            <span class="dot"></span> 
+            <span class="dot"></span> 
+            <span class="dot"></span> 
+            <span class="dot"></span>
+            <span class="dot"></span>
+        </div>
+        
+        
+        <script>
+            var slideIndex = 0;
+            showSlides();
+            
+            function plusSlides(n) {
+                showSlides(slideIndex += n);
+            }
+            
+            function currentSlide(n) {
+                showSlides(slideIndex = n);
+            }
+
+            function showSlides() {
+                var i;
+                var slides = document.getElementsByClassName("mySlides");
+                var images = document.getElementsByClassName("slidesImage");
+                var dots = document.getElementsByClassName("dot");
+                for (i = 0; i < slides.length; i++) {
+                    slides[i].style.display = "none";
+                }
+                slideIndex++;
+                if (slideIndex > slides.length) {
+                    slideIndex = 1
+                }
+                for (i = 0; i < dots.length; i++) {
+                    dots[i].className = dots[i].className.replace(" active", "");
+                }
+                slides[slideIndex - 1].style.display = "block";
+                images[slideIndex - 1].style.width = "100%";
+                images[slideIndex - 1].style.height = "400px";
+                dots[slideIndex - 1].className += " active";
+                dots[slideIndex - 1].style.display = "";
+                setTimeout(showSlides, 2000); // Change image every 2 seconds
+            }
+        </script>
+        
+        <h1 style="text-align: center; color:#161717; font-size:30px; font-weight: bold;">Browse by Categories</h1>
+        <p style="text-align: center; color:#a5a8a8;font-size:20px;">Discover projects just for you and get great recommendations when you select your interests.</p><br>
+        
+        <div style="width: 100%;">
+        <button class="main-page_btn" ><i class="fa fa-leaf"></i> Agriculture</button>
+        <button class="main-page_btn" ><i class="fa fa-clipboard"></i> Board Reporting</button>
+        <button class="main-page_btn" ><i class="fa fa-handshake"></i> Business</button>
+        <button class="main-page_btn" ><i class="fa fa-book"></i> Education</button>
+        <button class="main-page_btn" ><i class="fa fa-bolt"></i> Energy</button>
+        <button class="main-page_btn" ><i class="fa fa-dollar"></i> Finance & Investment</button>
+        <button class="main-page_btn" ><i class="fa fa-hospital-o"></i> Healthcare</button>
+        <button class="main-page_btn" ><i class="fa fa-users"></i> Human Capital</button>
+        <button class="main-page_btn" ><i class="fa fa-comment-o"></i> Infocommuniation & Technology</button>
+        <button class="main-page_btn" ><i class="fa fa-balance-scale"></i> Legal</button>
+        <button class="main-page_btn" ><i class="fa fa-home"></i> Manufacturing</button>
+        <button class="main-page_btn" ><i class="fa fa-line-chart"></i> Marketing</button>
+        <button class="main-page_btn" ><i class="fa fa-flask"></i> Maths / Science</button>
+        <button class="main-page_btn" ><i class="fa fa-close"></i> Policy & Socioeconomic</button>
+        <button class="main-page_btn" ><i class="fa fa-university"></i> Professional Services</button>
+        <button class="main-page_btn" ><i class="fa fa-plane"></i> Tourism & Hospitality</button>
+        </div>
+        <div class="sec">
+               <img src="photo/p1.PNG" width="100%" height="500"/><br><br>
+        </div>
+        
+        <h1 style="text-align: center; color:#161717; font-size:30px; font-weight: bold;">Why UIP Future is important</h1>
+        <p style="text-align: center; color:#a5a8a8;font-size:20px;">Discover projects just for you and get great recommendations when you select your interests.</p> 
+
+        <div class="row">
+            <div class="main-page_column" style="background-color:#f0eee9;">
+                <h2 style="font-size: 20px">What is UIP?</h2>
+                <p style="font-size: 15px">UIP is an AI-as-a-Service (AIaaS) platform for educators in Universities to convert their areas of expertise into prototypes, curriculum, industry-friendly collaboration models and develop new areas of research with AI-enabled engine. From prototyping stage, UIP helps to expand and develop the research and prototypes into fully-ready, AI-based expert systems for industry adoption and commercialisation.</p>
+            </div>
+            <div class="main-page_column" style="background-color:#f0eee9;">
+                <h2 style="font-size: 20px">Value Proposition</h2>
+                <p style="font-size: 15px">UIP is disruptive and different because it helps prepare educators for the future that is filled with rapid and continuous changes challenges and uncertainties. In response, the educators will need to fundamentally transform themselves in order to adapt to these new conditions and demands.</p>
+                <p style="font-size: 15px">UIP looks at each educator and his or her specialisation and achievement, and come out with a personalised AI expert system – from prototype to full commercialisation – without having to spend enormous resources on infrastructure, human capital expertise in AI, long implementation schedules, capital expenditure costs, etc.</p>
+            </div>
+            <div class="main-page_column" style="background-color:#f0eee9;">
+                <h2 style="font-size: 20px">Benefits</h2>
+                <p style="font-size: 15px">UIP helps to overcome the challenges due to conservativism, ‘silo mentality’, resistance to interdisciplinarity and practical knowledge, sentimentality about ‘low-value’ courses and slow pace of IR4.0 adaptation. UIP helps to accelerate the dismantling of the legacy higher education ‘workforce’.</p>
+            </div>
+        </div>
+        
+        <div class="footer"> 
+            <div class="copyrightrow">
+                <p3>All Rights Reserved. Developed by Progression Studios</p3>
+            </div>
+        </div>
+    </body>
+</html>

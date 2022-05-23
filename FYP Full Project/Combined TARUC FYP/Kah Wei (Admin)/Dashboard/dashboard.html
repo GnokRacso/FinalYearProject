@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<title>Academic Advisor</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../admin.css">
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.7.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/4.1.2/papaparse.min.js"></script>
+<body style="background-color: grey;">
+
+<div class="w3-sidebar w3-bar-block w3-collapse w3-card w3-animate-left" style="width:200px;" id="mySidebar">
+    <button class="w3-bar-item w3-button w3-large w3-hide-large" onclick="w3_close()">Close &times;</button>
+    <a href="dashboard.html" class="w3-bar-item w3-button">Dashboard</a>
+    <a href="#" class="w3-bar-item w3-button">Ministry</a>
+    <a href="../Academic Advisor/homepage.html" class="w3-bar-item w3-button">Academic Advisor</a>
+    <a href="../UIP Future/homepage.html" class="w3-bar-item w3-button">UIP Future</a>
+    <a href="#" class="w3-bar-item w3-button">Login</a>
+    <a href="#" class="w3-bar-item w3-button">Log Out</a>
+</div>
+<div class="w3-main" style="margin-left:200px">
+    <div class="w3-teal">
+      <button class="w3-button w3-teal w3-xlarge w3-hide-large" onclick="w3_open()">&#9776;</button>
+      <div class="w3-container">
+        <h1 style="width:50%; margin-bottom:30px;margin-left: 5px;">Dashboard</h1>
+        <div class="image-container" style="box-sizing: border-box;padding:10px; margin-bottom:10px">
+            <h3 style="margin-left: 5px;font-weight: bold;">Pie Chart</h3>
+            <div class="image-row" style="clear:both;display:table;">
+              <img class="dashboard_image" style="width:49%;height:500px;float:left;padding:5px;" src="../img/Pie Chart 1.jpeg" style alt="Pie Chart 1">
+              <img class="dashboard_image" style="width:49%;height:500px;float:left;padding:5px;" src="../img/Pie Chart 2.jpeg" style alt="Pie Chart 2">
+            </div>
+        </div>
+        <div class="image-container" style="box-sizing: border-box; border: 1px solid black; padding:10px; margin-bottom:10px">
+          <h3 style="margin-left: 5px;font-weight: bold;">Bar Chart</h3>
+          <div class="image-row" style="clear:both;display:table;">
+            <img class="dashboard_image" style="width:49%;height:500px;float:left;padding:5px;" src="../img/Vertical Bar Chart.jpeg" style alt="Vertical Bar Chart">
+            <img class="dashboard_image" style="width:49%;height:500px;float:left;padding:5px;" src="../img/Horizontal Bar Chart.jpeg" style alt="Horizontal Bar Chart">
+          </div>
+        </div>
+
+        <div class="image-container" style="box-sizing: border-box; border: 1px solid black; padding:10px; margin-bottom:10px">
+          <h3 style="margin-left: 5px;font-weight: bold;">Bubble Chart and Text Chart</h3>
+          <div class="image-row" style="clear:both;display:table;">
+            <img class="dashboard_image" style="width:49%;height:100%;float:left;padding:10px;margin:5px 5px;border: 1px solid black;border-radius: 4px;" src="../img/Chart 1.jpeg" style alt="Chart 1">
+            <div class="dashboard_container" style="width:49%;float:left;padding:10px;margin:5px 5px;">
+              <img class="dashboard_image" style="width:100%;float:left;padding:10px;margin:5px 5px;border: 1px solid black;border-radius: 4px;" src="../img/Chart 2.jpeg" style alt="Chart 2">
+              <h3 style="text-align: center;">Total Staff Designation in Each University</h3>
+              <img class="dashboard_image" style="width:100%;height:500px;float:left;padding:5px;margin:5px 5px;border: 1px solid black;border-radius: 4px;" src="../img/BubbleChart.jpeg" style alt="Bubble Chart">
+              <h3 style="text-align: center;">Bubble Chart For Top 5 Faculty</h3>
+            </div>
+            
+          </div>
+        </div>
+    </div>
+    </div>
+
+</div>
+<script>
+    function w3_open() {
+      document.getElementById("mySidebar").style.display = "block";
+    }
+    
+    function w3_close() {
+      document.getElementById("mySidebar").style.display = "none";
+    }
+</script>
+
+</body>
+</html>

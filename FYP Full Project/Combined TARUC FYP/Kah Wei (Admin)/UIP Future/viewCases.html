@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<title>Add UIP Cases</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="C:\Users\lkw06\Desktop\FYP Taruc\design.css">
+<body>
+
+<div class="w3-sidebar w3-bar-block w3-collapse w3-card w3-animate-left" style="width:200px;" id="mySidebar">
+    <button class="w3-bar-item w3-button w3-large w3-hide-large" onclick="w3_close()">Close &times;</button>
+    <a href="../Dashboard/dashboard.html" class="w3-bar-item w3-button">Dashboard</a>
+    <a href="#" class="w3-bar-item w3-button">Ministry</a>
+    <a href="../Academic Advisor/newHome.html" class="w3-bar-item w3-button">Academic Advisor</a>
+    <a href="homepage.html" class="w3-bar-item w3-button">UIP Future</a>
+    <a href="#" class="w3-bar-item w3-button">Login</a>
+    <a href="#" class="w3-bar-item w3-button">Log Out</a>
+</div>
+
+<div class="w3-main" style="margin-left:200px">
+<div class="w3-teal">
+  <button class="w3-button w3-teal w3-xlarge w3-hide-large" onclick="w3_open()">&#9776;</button>
+  <div class="w3-container" >
+    <div class="container" style="width:100%;">
+      <h1>Add New Project</h1>
+      <input type="text" name="post_title" size="50" id="title" spellcheck="true" autocomplete="off" required placeholder="Project Name" form="uipForm" value="AI Platform – Customised Family Happiness Roadmap in the prevention of divorce for counsellors and case workers using AI." style="width: 50%;" />
+      <p>Permalink:<a href="https://uipfuture.com/product/2147/">https://uipfuture.com/product/2147/</a></p>
+    </div>
+    
+    <form action="uipNewHome2.html" id="uipForm">
+      <label for="imageUpload" class="input_file">Select image:</label>
+      <div class="image-preview" id="imagePreview" style="width:300px; min-height: 100px; border:2px solid #000000; margin:10px 0px; display:flex; align-items: center; justify-content: center; font-weight: bold; color:#000000;">
+        <input id="imageUpload" name="imageUpload" type="file" accept="image/*">
+        <img src="../img/fish.jpeg" alt="Upload Image" class="image-preview__image" style="width:100%;"/>
+      </div>
+      <textarea id="w3review" name="w3review" rows="4" cols="50" placeholder="Input project description"></textarea>
+    </form>
+  </div>
+
+  <div class="w3-container">
+      <fieldset id = "categoryList">  
+      <legend>Select Category:</legend>  
+      <input type="checkbox" name="category" value="Agriculture" form="uipForm">Agriculture<br>  
+      <input type="checkbox" name="category" value="Board Reporting" form="uipForm" checked>Board Reporting<br>  
+      <input type="checkbox" name="category" value="Business" form="uipForm">Business<br>
+      <input type="checkbox" name="category" value="Design" form="uipForm">Design<br>
+      <input type="checkbox" name="category" value="Manufacturing" form="uipForm">Manufacturing<br>  
+      <input type="checkbox" name="category" value="Policy & Socioeconomic" form="uipForm">Policy & Sosioeconomic<br>  
+      </fieldset>  
+    <br>
+    <button id="addNewCategoryButton" class="button_class" onclick="addNewCategory();">Add New Category</button>
+    
+    <div id="addNewCategoryDiv" class="addNewCategory" style="width:50%; display:none; margin-top: 10px; margin-bottom: 15px;">
+        <input type="text" name="post_title" size="30" value="" id="newCategory" spellcheck="true" autocomplete="off" required placeholder="New Category Name" style="width:100%;">
+        <br><br>
+        <button class="button_class" onclick="addNewCategoryToList();">Add New Category</button>
+    </div>
+    <br><br>
+    <input class="button_class" type="submit" form="uipForm">
+  </div>
+  
+</div>
+</div>
+
+<script>
+function w3_open() {
+  document.getElementById("mySidebar").style.display = "block";
+}
+
+function w3_close() {
+  document.getElementById("mySidebar").style.display = "none";
+}
+
+function addNewCategory() {
+  document.getElementById("addNewCategoryDiv").style.display="block";
+  var addNewButton = document.getElementById("addNewCategoryButton");
+  addNewButton.remove();
+}
+
+function addNewCategoryToList(){
+  var list = document.getElementById("categoryList");
+  var text = document.getElementById("newCategory").value;
+  console.log(text)
+  var input = document.createElement("input");
+  input.type = "checkbox";
+  input.value = text;
+  input.innerHTML = text;
+  input.name = "category"; // set the CSS class
+  var span = document.createElement("span");
+  span.innerText = text;
+  var br = document.createElement("br");
+  list.appendChild(input);
+  list.appendChild(span);
+  list.appendChild(br)
+}
+
+const inpFile = document.getElementById("imageUpload");
+const previewContainer = document.getElementById("imagePreview");
+const previewImage = previewContainer.querySelector(".image-preview__image");
+const previewDefaultText = previewContainer.querySelector(".image-preview__text");
+inpFile.addEventListener("change", function(){
+  const file = this.files[0];
+  console.log(file)
+  if(file) {
+    const reader = new FileReader();
+    previewDefaultText.style.display = "none"
+    previewImage.style.display = "block";
+
+    reader.addEventListener("load", function() {
+      console.log(this);
+      previewImage.setAttribute("src", this.result);
+
+      
+    });
+    reader.readAsDataURL(file);
+  } else{
+    previewDefaultText.style.display=null;
+    previewImage.style.display = "none";
+    previewImage.setAttribute("src", "");
+  }
+});
+
+</script>
+
+
+     
+</body>
+</html>

@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Header */
+.header {
+  overflow: hidden;
+  background-color: black;
+  padding: 20px 10px;
+}
+
+.header a {
+  float: left;
+  color: white;
+  text-align: center;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 15px; 
+  line-height: 15px;
+  border-radius: 4px;
+}
+
+.main-logo {
+  width: 100%;
+  max-width: 100px;
+}
+
+ 
+.img-responsive {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.header a:hover {
+  color: #4b5f7d;
+}
+
+.header-right {
+  float: right;
+}
+
+@media screen and (max-width: 500px) {
+  .header a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+  
+  .header-right {
+    float: none;
+  }
+}
+
+body{
+  background: #ffffff;
+  padding: 0 20px;
+}
+
+.sortable {
+  font-family: "Fira Sans", sans-serif;
+  border-collapse: collapse;
+}
+
+.sortable th {
+  text-align: left;
+  border-top: 2px solid #009578;
+  border-bottom: 2px solid #009578;
+}
+
+.sortable td,
+.search-input {
+  font-size: 1em;
+  padding: 0.6em 1em;
+}
+
+.search-input {
+  border: none;
+  outline: none;
+  font-family: "Fira Sans", sans-serif;
+}
